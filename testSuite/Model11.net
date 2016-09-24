@@ -1,0 +1,16 @@
+# Created by BioNetGen 2.2.6-stable
+begin parameters
+    1 k1  1  # Constant
+    2 k2  2  # Constant
+end parameters
+begin species
+    1 A(a,a) 100
+    2 B(b) 50
+    3 A(a!1,a).B(b!1) 0
+    4 A(a!1,a!2).B(b!1).B(b!2) 0
+end species
+begin reactions
+    1 1,2 3 2*k1 #_R1
+    2 2,3 4 k1 #_R1
+    3 3 0 k2 #_R2
+end reactions
